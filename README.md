@@ -4,6 +4,26 @@ Este é um servidor FastAPI que fornece uma API para buscar operadores a partir 
 
 ---
 
+## Arquitetura em Camadas (Layered Architecture)
+```
+IntuitiveSearch/
+├── Backend/
+    ├── api/
+    |    └── __init__.py
+    |    └── operator_routes.py
+    ├── models/
+    │   └── operator.py
+    ├── repositories/
+    │   └── operator_repository.py
+    ├── services/
+    │   └── operator_service.py
+    └── data/
+    |    └── operators.csv
+    └── __init__.py
+    └── main.py
+
+```
+
 ### **Como Executar o Backend com o Uvicorn**
 
 Para rodar o servidor de desenvolvimento do FastAPI usando o Uvicorn, siga os seguintes passos:
