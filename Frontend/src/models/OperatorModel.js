@@ -3,7 +3,6 @@ import axios from 'axios';
 export default class OperatorModel {
   static async fetchAllOperators() {
     try {
-      // Remova os < > da URL
       const response = await axios.get('http://127.0.0.1:8000/api/operators/search');
       return response.data.operators || [];
     } catch (error) {
@@ -13,7 +12,6 @@ export default class OperatorModel {
 
   static async searchOperators(query) {
     try {
-      // Remova os < > da URL
       const response = await axios.get('http://127.0.0.1:8000/api/operators/search', {
         params: query ? { query } : {}
       });
