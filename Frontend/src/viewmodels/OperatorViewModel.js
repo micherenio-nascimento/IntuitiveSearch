@@ -1,38 +1,41 @@
+import { reactive } from 'vue';
 import OperatorModel from '../models/OperatorModel';
 
-export default class OperatorViewModel {
-  constructor() {
-    this.operators = [];
-    this.loading = false;
-    this.error = null;
-    this.searchQuery = '';
-  }
+export default function createOperatorViewModel() {
+  const state = reactive({
+    operators: [],
+    loading: false,
+    error: null,
+    searchQuery: ''
+  });
 
-  async loadInitialData() {
-    this.loading = true;
-    this.error = null;
+  async function loadInitialData() {
+    state.loading = true;
+    state.error = null;
     try {
-      this.operators = await OperatorModel.fetchAllOperators();
+      state.operators = await OperatorModel.fetchAllOperators();
     } catch (err) {
-      this.error = err.message;
+      state.error = err.message;
     } finally {
-      this.loading = false;
+      state.loading = false;
     }
   }
 
-  async search() {
-    this.loading = true;
-    this.error = null;
+  async function search() {
+    state.loading = true;
+    state.error = null;
     try {
-      this.operators = await OperatorModel.searchOperators(this.searchQuery.trim());
+      state.operators = await OperatorModel.searchOperators(state.searchQuery.trim());
     } catch (err) {
-      this.error = err.message;
+      state.error = err.message;
     } finally {
-      this.loading = false;
+      state.loading = false;
     }
   }
 
-  setSearchQuery(query) {
-    this.searchQuery = query;
-  }
+  return {
+    state,
+    loadInitialData,
+    search
+  };
 }

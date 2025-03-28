@@ -1,7 +1,8 @@
 <template>
     <div class="search-container">
-      <input
-        v-model="localQuery"
+        <input
+        :value="query"
+        @input="$emit('update:query', $event.target.value)"
         @keyup.enter="$emit('search')"
         placeholder="Digite Razão Social, Nome Fantasia, CNPJ ou Registro ANS"
         class="search-input"
@@ -21,16 +22,7 @@
         default: ''
       }
     },
-    computed: {
-      localQuery: {
-        get() {
-          return this.query;
-        },
-        set(value) {
-          this.$emit('update:query', value);
-        }
-      }
-    }
+    emits: ['update:query', 'search']
   };
   </script>
   
