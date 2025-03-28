@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "02dab012-f402-482b-a85e-05ed642b351a",
+		"name": "IntuitiveSearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29777951"
+	},
+	"item": [
+		{
+			"name": "Todos os dados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/operators/search"
+			},
+			"response": []
+		},
+		{
+			"name": "Razao_Social",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/operators/search?query=EXEMPLO ADMINISTRADORA DE BENEFÍCIOS LTDA",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"operators",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "EXEMPLO ADMINISTRADORA DE BENEFÍCIOS LTDA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nome_Fantasia",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/operators/search?query=EXEMPLO SAÚDE",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"operators",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "EXEMPLO SAÚDE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CNPJ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/operators/search?query=19541931000125",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"operators",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "19541931000125"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro_ANS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/operators/search?query=419761",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"operators",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "419761"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
