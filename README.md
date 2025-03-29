@@ -1,3 +1,13 @@
+# IntuitiveSearch
+
+Este projeto consiste em um backend FastAPI baseado no padrão __Layered Architecture__ que fornece uma API para buscar operadores a partir de um arquivo CSV, juntamente com um frontend Vue.js baseado no padrão __MVVM (Model-View-ViewModel)__ para facilitar a interação com a API.
+
+O backend utiliza FastAPI para oferecer endpoints eficientes e de alto desempenho, enquanto o frontend adota o Vue.js para proporcionar uma experiência de usuário fluida e reativa. A separação entre backend e frontend garante modularidade, escalabilidade e melhor organização do código.
+
+ __Observação:__ O arquivo CSV utilizado contém dados fictícios, mas segue a estrutura de um documento real, garantindo que a API possa ser testada com um formato de dados próximo ao utilizado em produção.
+
+A seguir, você encontrará detalhes sobre a arquitetura do projeto, instruções de instalação, execução e explicação do funcionamento de cada camada
+
 # Backend - API FastAPI
 
 Este é um servidor FastAPI que fornece uma API para buscar operadores a partir de um arquivo CSV. Abaixo estão as instruções de como rodar o backend utilizando o Uvicorn, além dos detalhes sobre os endpoints e filtros disponíveis.
@@ -153,3 +163,56 @@ A pesquisa pode ser realizada nos seguintes campos:
 4. **Registro ANS (`Registro_ANS`)**
     
     Exemplo de termo pesquisável: `"419761"`
+
+---
+
+# Fronent com Vue.js usando MVVM
+
+
+## Estrutura do Projeto
+
+```
+src/
+├── components/
+│   ├── OperatorCard.vue       # Componente para exibir um operador individual
+│   ├── OperatorList.vue       # Componente para a lista de operadores
+│   └── SearchBar.vue          # Componente para a barra de busca
+├── models/
+│   └── OperatorModel.js       # Modelo para interação com a API
+├── viewmodels/
+│   └── OperatorViewModel.js   # ViewModel para gerenciar estado e lógica
+└── App.vue                    # Componente raiz que coordena tudo
+```
+## Uso
+
+1. Acesse a pasta do projeto:
+   ```bash
+   cd Frontend
+   ```
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+4. Execute o projeto:
+   ```bash
+   npm run serve
+   ```
+
+## Explicação do Padrão MVVM no frontend
+
+Usar o padrão MVVM (Model-View-ViewModel) traz várias vantagens, especialmente para projetos que precisam de organização, reutilização de código e melhor separação de responsabilidades. 
+
+## Separação Clara de Responsabilidades
+O MVVM divide o código em três camadas distintas:
+
+__Model:__ Lida com os dados e a lógica de negócios, geralmente interagindo com APIs ou bancos de dados.
+
+__ViewModel:__ Gerencia o estado da aplicação, processa a lógica da interface e atua como ponte entre o Model e a View.
+
+__View:__ A camada de apresentação que renderiza a interface para o usuário.
+
+---
+# Conclusão
+Este projeto demonstra a integração eficiente entre um backend FastAPI e um frontend Vue.js, aplicando boas práticas de desenvolvimento e o padrão MVVM para garantir uma separação clara de responsabilidades.
+
+A API permite a busca de operadores a partir de um arquivo CSV, proporcionando alto desempenho e escalabilidade.
